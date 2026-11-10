@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Die Freie Liste – Informationen für Mitglieder der Sparda-Bank München eG</title>
+<meta name="description" content="Die Freie Liste – eine Initiative engagierter Kunden zur Vertreterwahl 2026 der Sparda-Bank München eG. Chancengleichheit und Transparenz.">
+<meta name="theme-color" content="#2563eb" id="meta-theme-color">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+(function () {
+  try {
+    var saved = localStorage.getItem('dfl-theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  } catch (e) {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+})();
+</script>
+<style>
+  :root {
+    --bg: #f6f8fc;
+    --bg-soft: #eef2f9;
+    --surface: #ffffff;
+    --surface-2: #f8fafc;
+    --ink: #0f172a;
+    --ink-soft: #1e293b;
+    --muted: #55637a;
+    --border: #e2e8f0;
+    --primary: #2563eb;
+    --primary-strong: #1e3a8a;
+    --primary-soft: #e3ebfd;
+    --accent: #f97316;
+    --accent-soft: #ffedd9;
+    --logo-ink: #0f172a;
+    --logo-claim: #2563eb;
+    --shadow: 0 10px 30px rgba(15, 23, 42, .08);
+    --shadow-lg: 0 24px 60px rgba(15, 23, 42, .14);
+    --radius: 16px;
+    --header-bg: rgba(255, 255, 255, .82);
+    --gradient-hero: radial-gradient(1200px 500px at 85% -10%, rgba(249, 115, 22, .14), transparent 60%),
+                     radial-gradient(900px 480px at -10% -10%, rgba(37, 99, 235, .16), transparent 55%),
+                     linear-gradient(180deg, #f6f8fc 0%, #eef2f9 100%);
+  }
+  [data-theme="dark"] {
+    --bg: #0a1120;
+    --bg-soft: #0e1729;
+    --surface: #101a2e;
+    --surface-2: #0d1526;
+    --ink: #e6ecf5;
+    --ink-soft: #cbd5e1;
+    --muted: #93a3ba;
+    --border: #1e2c44;
+    --primary: #5b8cff;
+    --primary-strong: #8ab0ff;
+    --primary-soft: #16233f;
+    --accent: #fb923c;
+    --accent-soft: #33200f;
+    --logo-ink: #eef3fb;
+    --logo-claim: #7da4ff;
+    --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+    --shadow-lg: 0 24px 60px rgba(0, 0, 0, .5);
+    --header-bg: rgba(10, 17, 32, .8);
+    --gradient-hero: radial-gradient(1200px 500px at 85% -10%, rgba(249, 115, 22, .16), transparent 60%),
+                     radial-gradient(900px 480px at -10% -10%, rgba(91, 140, 255, .18), transparent 55%),
+                     linear-gradient(180deg, #0a1120 0%, #0d1526 100%);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    transition: background .3s ease, color .3s ease;
+  }
+  img, svg { display: block; max-width: 100%; }
+  a { color: var(--primary); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { width: min(1120px, 92%); margin: 0 auto; }
+
+  /* ---------- Header ---------- */
+  .site-header {
+    position: fixed; inset: 0 0 auto 0; z-index: 100;
+    background: var(--header-bg);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid transparent;
+    transition: border-color .3s ease, box-shadow .3s ease;
+  }
+  .site-header.scrolled { border-bottom-color: var(--border); box-shadow: var(--shadow); }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 72px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.05rem; color: var(--ink); letter-spacing: -.02em; }
+  .brand:hover { text-decoration: none; }
+  .brand .dot-org { color: var(--accent); }
+  .main-nav ul { display: flex; align-items: center; gap: 4px; list-style: none; }
+  .main-nav a {
+    display: inline-block; padding: 8px 12px; border-radius: 10px;
+    color: var(--muted); font-weight: 600; font-size: .92rem;
+    transition: color .2s, background .2s;
+  }
+  .main-nav a:hover { color: var(--ink); background: var(--primary-soft); text-decoration: none; }
+  .main-nav a.active { color: var(--primary); background: var(--primary-soft); }
+  .header-actions { display: flex; align-items: center; gap: 10px; }
+  .theme-toggle {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 42px; height: 42px; border-radius: 12px; cursor: pointer;
+    border: 1px solid var(--border); background: var(--surface); color: var(--ink);
+    transition: transform .2s, box-shadow .2s, border-color .2s;
+  }
+  .theme-toggle:hover { transform: translateY(-1px); box-shadow: var(--shadow); border-color: var(--primary); }
+  .theme-toggle svg { width: 20px; height: 20px; }
+  .icon-moon { display: none; }
+  [data-theme="dark"] .icon-sun { display: none; }
+  [data-theme="dark"] .icon-moon { display: block; }
+  .nav-toggle {
+    display: none; width: 42px; height: 42px; border-radius: 12px; cursor: pointer;
+    border: 1px solid var(--border); background: var(--surface); color: var(--ink);
+    align-items: center; justify-content: center; flex-direction: column; gap: 5px;
+  }
+  .nav-toggle span { display: block; width: 18px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform .25s, opacity .25s; }
+  .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 160px 0 80px; background: var(--gradient-hero); transition: background .3s ease; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 44px; align-items: center; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 14px; border-radius: 999px; font-size: .82rem; font-weight: 700;
+    background: var(--primary-soft); color: var(--primary); border: 1px solid var(--border);
+  }
+  .badge::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  .hero h1 { font-size: clamp(2rem, 4.6vw, 3.4rem); line-height: 1.12; letter-spacing: -.03em; font-weight: 800; margin: 18px 0 16px; }
+  .hero h1 .accent { color: var(--accent); }
+  .hero p.lead { font-size: 1.12rem; color: var(--muted); max-width: 34rem; }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 22px; border-radius: 12px; font-weight: 700; font-size: .95rem;
+    border: 1px solid transparent; cursor: pointer; transition: transform .2s, box-shadow .2s, background .2s;
+  }
+  .btn:hover { text-decoration: none; transform: translateY(-2px); box-shadow: var(--shadow); }
+  .btn-primary { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-strong) 100%); color: #fff; }
+  [data-theme="dark"] .btn-primary { color: #0a1120; background: linear-gradient(135deg, #7da4ff 0%, var(--primary) 100%); }
+  .btn-accent { background: var(--accent); color: #fff; }
+  [data-theme="dark"] .btn-accent { color: #1c0e04; }
+  .btn-ghost { background: var(--surface); color: var(--ink); border-color: var(--border); }
+  .hero-logo-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 24px;
+    padding: 26px 26px 22px; box-shadow: var(--shadow-lg);
+  }
+  .hero-logo-card svg { width: 100%; height: auto; }
+  .logo-word { fill: var(--logo-ink); }
+  .logo-claim { fill: var(--logo-claim); }
+  .logo-sub { fill: var(--ink-soft); }
+  .logo-line { fill: var(--border); }
+  .hero-stats { display: flex; gap: 28px; margin-top: 26px; flex-wrap: wrap; }
+  .hero-stats .stat { font-size: .85rem; color: var(--muted); }
+  .hero-stats .stat strong { display: block; font-size: 1.25rem; color: var(--ink); letter-spacing: -.02em; }
+
+  /* ---------- Sections ---------- */
+  section { padding: 84px 0; }
+  .section-alt { background: var(--bg-soft); transition: background .3s ease; }
+  .section-head { max-width: 46rem; margin-bottom: 44px; }
+  .eyebrow { font-size: .8rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+  .section-head h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); letter-spacing: -.025em; line-height: 1.2; margin: 10px 0 12px; }
+  .section-head p { color: var(--muted); }
+
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 26px; box-shadow: var(--shadow); transition: transform .25s, box-shadow .25s, border-color .25s;
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
+  .card .icon {
+    width: 46px; height: 46px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+    background: var(--primary-soft); color: var(--primary); margin-bottom: 16px;
+  }
+  .card .icon.orange { background: var(--accent-soft); color: var(--accent); }
+  .card h3 { font-size: 1.08rem; letter-spacing: -.01em; margin-bottom: 8px; }
+  .card p { font-size: .93rem; color: var(--muted); }
+
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  .check-list { list-style: none; display: grid; gap: 14px; margin-top: 8px; }
+  .check-list li { display: flex; gap: 12px; align-items: flex-start; color: var(--ink-soft); font-size: .97rem; }
+  .check-list .check {
+    flex: none; width: 24px; height: 24px; border-radius: 8px; margin-top: 1px;
+    background: var(--primary-soft); color: var(--primary);
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .check-list .check svg { width: 14px; height: 14px; }
+
+  /* ---------- Timeline (So wählen Sie) ---------- */
+  .timeline { list-style: none; display: grid; gap: 0; counter-reset: step; position: relative; }
+  .timeline::before {
+    content: ""; position: absolute; left: 23px; top: 12px; bottom: 12px; width: 2px;
+    background: linear-gradient(180deg, var(--primary), var(--accent));
+  }
+  .timeline li { position: relative; padding: 0 0 34px 66px; }
+  .timeline li:last-child { padding-bottom: 0; }
+  .timeline .num {
+    position: absolute; left: 0; top: 0; width: 48px; height: 48px; border-radius: 14px;
+    background: var(--surface); border: 2px solid var(--primary); color: var(--primary);
+    display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.05rem;
+  }
+  .timeline h3 { font-size: 1.05rem; margin-bottom: 4px; }
+  .timeline p { color: var(--muted); font-size: .94rem; max-width: 40rem; }
+
+  /* ---------- Kandidaten ---------- */
+  .person-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .person {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 24px 20px; text-align: center; box-shadow: var(--shadow); transition: transform .25s, box-shadow .25s;
+  }
+  .person:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+  .person .avatar {
+    width: 76px; height: 76px; margin: 0 auto 14px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-soft), var(--accent-soft));
+    border: 2px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 1.4rem; color: var(--primary);
+  }
+  .person h3 { font-size: 1rem; }
+  .person .role { font-size: .82rem; color: var(--accent); font-weight: 700; margin: 2px 0 8px; }
+  .person p { font-size: .85rem; color: var(--muted); }
+
+  /* ---------- FAQ ---------- */
+  .faq-list { display: grid; gap: 12px; max-width: 52rem; }
+  details.faq {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+    overflow: hidden; transition: border-color .2s;
+  }
+  details.faq[open] { border-color: var(--primary); }
+  details.faq summary {
+    list-style: none; cursor: pointer; padding: 18px 22px; font-weight: 700; font-size: .98rem;
+    display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  }
+  details.faq summary::-webkit-details-marker { display: none; }
+  details.faq summary .chev { flex: none; width: 26px; height: 26px; border-radius: 8px; background: var(--primary-soft); color: var(--primary); display: inline-flex; align-items: center; justify-content: center; transition: transform .25s; }
+  details.faq[open] summary .chev { transform: rotate(180deg); }
+  details.faq .answer { padding: 0 22px 18px; color: var(--muted); font-size: .94rem; }
+
+  /* ---------- Kontakt / Impressum ---------- */
+  .contact-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
+    padding: 34px; box-shadow: var(--shadow); display: grid; grid-template-columns: 1fr 1fr; gap: 30px;
+  }
+  .contact-card h3 { margin-bottom: 12px; font-size: 1.1rem; }
+  .contact-card p, .contact-card li { color: var(--muted); font-size: .94rem; }
+  .contact-card ul { list-style: none; display: grid; gap: 8px; }
+  .placeholder { color: var(--accent); font-weight: 600; }
+
+  /* ---------- Footer ---------- */
+  .site-footer { border-top: 1px solid var(--border); background: var(--surface-2); padding: 44px 0 30px; transition: background .3s ease; }
+  .footer-grid { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; align-items: flex-start; }
+  .footer-brand { display: flex; align-items: center; gap: 10px; font-weight: 800; color: var(--ink); }
+  .footer-nav { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .footer-nav a { color: var(--muted); font-size: .88rem; font-weight: 600; }
+  .footer-nav a:hover { color: var(--ink); text-decoration: none; }
+  .footer-bottom { margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--border); color: var(--muted); font-size: .82rem; display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; }
+
+  /* ---------- Reveal animation ---------- */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 980px) {
+    .hero-grid, .split { grid-template-columns: 1fr; }
+    .hero { padding-top: 132px; }
+    .cards { grid-template-columns: repeat(2, 1fr); }
+    .person-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-card { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 760px) {
+    .nav-toggle { display: inline-flex; }
+    .main-nav {
+      position: absolute; top: 72px; left: 0; right: 0;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-lg); display: none; padding: 12px 4%;
+    }
+    .main-nav.open { display: block; }
+    .main-nav ul { flex-direction: column; align-items: stretch; gap: 2px; }
+    .main-nav a { display: block; padding: 12px 14px; font-size: 1rem; }
+    .cards, .person-grid { grid-template-columns: 1fr; }
+    section { padding: 60px 0; }
+    .hero { padding: 120px 0 56px; }
+    .hero-logo-card { padding: 22px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    * { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="Die Freie Liste – zur Startseite">
+      <svg width="30" height="24" viewBox="0 0 104 66" aria-hidden="true">
+        <defs>
+          <linearGradient id="gBlue" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#1e3a8a"/><stop offset="1" stop-color="#2563eb"/>
+          </linearGradient>
+          <linearGradient id="gMix" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#1e40af"/><stop offset="1" stop-color="#f97316"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0"  width="104" height="13" rx="6.5" fill="url(#gBlue)"/>
+        <rect x="0" y="26" width="104" height="13" rx="6.5" fill="url(#gMix)"/>
+        <rect x="0" y="52" width="104" height="13" rx="6.5" fill="#f97316"/>
+      </svg>
+      <span>die-freie-liste<span class="dot-org">.org</span></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="#aktuelles">Aktuelles</a></li>
+        <li><a href="#warum">Warum wir?</a></li>
+        <li><a href="#programm">Programm</a></li>
+        <li><a href="#kandidaten">Kandidaten</a></li>
+        <li><a href="#waehlen">Wählen</a></li>
+        <li><a href="#unterstuetzen">Unterstützen</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Farbschema wechseln" title="Hell/Dunkel umschalten">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+        </svg>
+      </button>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="hero" style="padding-top:160px">
+    <div class="container hero-grid">
+      <div class="reveal visible">
+        <span class="badge">Vertreterwahl 2026 · Sparda-Bank München eG</span>
+        <h1>Chancengleichheit &amp; Transparenz für unsere Bank.</h1>
+        <p class="lead">Die Freie Liste ist eine Initiative engagierter Kundinnen und Kunden der Sparda-Bank München eG. Wir treten bei der Vertreterwahl 2026 an – für eine Bank, in der Mitglieder gehört werden und Entscheidungen nachvollziehbar sind.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#programm">Unser Programm ansehen</a>
+          <a class="btn btn-accent" href="#waehlen">So können Sie wählen</a>
+          <a class="btn btn-ghost" href="#kontakt">Kontakt aufnehmen</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><strong>2026</strong>Vertreterwahl</div>
+          <div class="stat"><strong>100%</strong>unabhängig &amp; ehrenamtlich</div>
+          <div class="stat"><strong>Seit 2011</strong>von Mitgliedern für Mitglieder</div>
+        </div>
+      </div>
+      <div class="hero-logo-card reveal visible" aria-label="Logo der Freien Liste">
+        <svg viewBox="0 28 1440 200" role="img" aria-label="die-freie-liste.org – Chancengleichheit und Transparenz">
+          <defs>
+            <linearGradient id="blueOrange" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#1e40af"/><stop offset="1" stop-color="#f97316"/>
+            </linearGradient>
+            <linearGradient id="brandBlue" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#1e3a8a"/><stop offset="1" stop-color="#2563eb"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(72, 40)">
+            <rect x="0" y="0"  width="104" height="13" rx="6.5" fill="url(#brandBlue)"/>
+            <rect x="0" y="26" width="104" height="13" rx="6.5" fill="url(#blueOrange)"/>
+            <rect x="0" y="52" width="104" height="13" rx="6.5" fill="#f97316"/>
+          </g>
+          <text x="224" y="86" font-family="'Inter','Segoe UI',system-ui,-apple-system,sans-serif" font-size="64" font-weight="800" class="logo-word">die-freie-liste<tspan fill="#f97316">.org</tspan></text>
+          <text x="228" y="138" font-family="'Inter','Segoe UI',system-ui,-apple-system,sans-serif" font-size="22" font-weight="600" letter-spacing="5" class="logo-claim">CHANCENGLEICHHEIT UND TRANSPARENZ</text>
+          <rect x="228" y="162" width="1140" height="1" class="logo-line"/>
+          <rect x="228" y="161" width="120" height="3" fill="#f97316"/>
+          <text x="228" y="214" font-family="'Inter','Segoe UI',system-ui,-apple-system,sans-serif" font-size="26" font-weight="600" class="logo-sub">Eine Initiative engagierter Kunden zur <tspan fill="#f97316" font-weight="700">Vertreterwahl 2026</tspan> der Sparda-Bank München.</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aktuelles -->
+  <section id="aktuelles" class="section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Aktuelle Informationen</span>
+        <h2>Neuigkeiten rund um die Vertreterwahl</h2>
+        <p>Hier veröffentlichen wir aktuelle Hinweise, Termine und Ergebnisse – zuletzt das Wahlergebnis der Vertreterwahl 2021.</p>
+      </div>
+      <div class="cards">
+        <article class="card reveal">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg></div>
+          <h3>Wahlergebnis 2021</h3>
+          <p>Das offizielle Ergebnis der letzten Vertreterwahl der Sparda-Bank München eG – übersichtlich aufbereitet und kommentiert.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+          <h3>Termine 2026</h3>
+          <p>Wahlzeitraum, Fristen und wichtige Termine zur Vertreterwahl 2026 – damit Sie keine Stimme verpassen.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div>
+          <h3>Bekanntmachungen</h3>
+          <p>Alle offiziellen Bekanntmachungen der Bank zur Wahl – neutral verlinkt und eingeordnet.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Warum -->
+  <section id="warum">
+    <div class="container split">
+      <div class="section-head reveal" style="margin-bottom:0">
+        <span class="eyebrow">Warum Vertreterwahl? Warum eine zweite Liste?</span>
+        <h2>Ihre Stimme zählt – machen Sie sie hörbar.</h2>
+        <p>Die Vertreterversammlung ist das höchste Mitgliederorgan der Genossenschaftsbank. Gewählte Vertreterinnen und Vertreter kontrollieren Vorstand und Aufsichtsrat und bringen die Interessen der Mitglieder ein. Eine zweite, unabhängige Liste sorgt für echte Alternativen und mehr Transparenz in der Wahl.</p>
+      </div>
+      <ul class="check-list reveal">
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Unabhängige Stimme der Kundinnen und Kunden in der Vertreterversammlung</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Echte Wahlalternative statt einer einzigen Vorschlagsliste</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Transparente Entscheidungen und nachvollziehbare Abstimmungsergebnisse</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Ehrenamtliches Engagement – ohne Eigeninteressen und ohne Weisungsbindung</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Programm -->
+  <section id="programm" class="section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Wer wir sind – was wir wollen</span>
+        <h2>Unser Programm in vier Punkten</h2>
+        <p>Wir sind Mitglieder wie Sie. Unser Programm ist kurz, klar und konsequent auf die Interessen der Kundinnen und Kunden ausgerichtet.</p>
+      </div>
+      <div class="cards">
+        <article class="card reveal">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>Transparenz</h3>
+          <p>Offene Kommunikation der Bank, nachvollziehbare Berichte und einsehbare Entscheidungsgrundlagen für alle Mitglieder.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3>Chancengleichheit</h3>
+          <p>Gleiche Behandlung aller Mitglieder – unabhängig von Kontostand, Alter oder Wohnort. Jede Stimme zählt gleich viel.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>Mitgliederrechte stärken</h3>
+          <p>Stärkung der Mitgliederbeteiligung, faire Wahlbedingungen und ein starkes Mitspracherecht in der Vertreterversammlung.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <h3>Nähe &amp; Dialog</h3>
+          <p>Regelmäßiger Austausch mit Mitgliedern – vor Ort, digital und in einer offenen Diskussionsrunde auf dieser Seite.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 7.7l5.4-.8z"/></svg></div>
+          <h3>Faire Konditionen</h3>
+          <p>Kritische Begleitung von Gebühren- und Zinsentscheidungen im Interesse der Mitglieder, nicht der Bilanz allein.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.1V12a10 10 0 1 1-5.9-9.1"/><path d="M22 4L12 14l-3-3"/></svg></div>
+          <h3>Nachhaltigkeit</h3>
+          <p>Verantwortungsvolle Unternehmensführung der Bank – ökologisch, sozial und ökonomisch nachhaltig.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kandidaten -->
+  <section id="kandidaten">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Unsere Vertreter stellen sich vor</span>
+        <h2>Die Kandidatinnen und Kandidaten der Freien Liste</h2>
+        <p>Engagierte Mitglieder aus München und der Region – hier stellen sie sich vor. <span class="placeholder">[Platzhalter: Namen und Kurzprofile ergänzen]</span></p>
+      </div>
+      <div class="person-grid">
+        <article class="person reveal">
+          <div class="avatar">NN</div>
+          <h3>Name Nachname</h3>
+          <div class="role">Kandidatin / Kandidat</div>
+          <p>Beruf, Bezug zur Bank und das wichtigste Anliegen für die Vertreterversammlung.</p>
+        </article>
+        <article class="person reveal">
+          <div class="avatar">NN</div>
+          <h3>Name Nachname</h3>
+          <div class="role">Kandidatin / Kandidat</div>
+          <p>Beruf, Bezug zur Bank und das wichtigste Anliegen für die Vertreterversammlung.</p>
+        </article>
+        <article class="person reveal">
+          <div class="avatar">NN</div>
+          <h3>Name Nachname</h3>
+          <div class="role">Kandidatin / Kandidat</div>
+          <p>Beruf, Bezug zur Bank und das wichtigste Anliegen für die Vertreterversammlung.</p>
+        </article>
+        <article class="person reveal">
+          <div class="avatar">NN</div>
+          <h3>Name Nachname</h3>
+          <div class="role">Kandidatin / Kandidat</div>
+          <p>Beruf, Bezug zur Bank und das wichtigste Anliegen für die Vertreterversammlung.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wählen -->
+  <section id="waehlen" class="section-alt">
+    <div class="container split">
+      <div class="section-head reveal" style="margin-bottom:0">
+        <span class="eyebrow">Wie können Sie wählen</span>
+        <h2>So geben Sie Ihre Stimme ab</h2>
+        <p>Die Wahl zur Vertreterversammlung erfolgt als Briefwahl bzw. über die Online-Wahl der Bank. So ist Ihre Teilnahme in wenigen Schritten erledigt.</p>
+      </div>
+      <ol class="timeline reveal">
+        <li>
+          <span class="num">1</span>
+          <h3>Wahlunterlagen prüfen</h3>
+          <p>Sie erhalten die Wahlunterlagen der Sparda-Bank München eG per Post oder über das Online-Banking. Prüfen Sie Stichtag und Frist.</p>
+        </li>
+        <li>
+          <span class="num">2</span>
+          <h3>Liste und Kandidaten wählen</h3>
+          <p>Wählen Sie die Freie Liste und – falls vorgesehen – Ihre bevorzugten Kandidatinnen und Kandidaten auf unserem Wahlzettel.</p>
+        </li>
+        <li>
+          <span class="num">3</span>
+          <h3>Stimme fristgerecht abgeben</h3>
+          <p>Geben Sie Ihre Stimme innerhalb des Wahlzeitraums ab – per Briefwahl oder bequem online. Jede abgegebene Stimme zählt.</p>
+        </li>
+        <li>
+          <span class="num">4</span>
+          <h3>Ergebnis verfolgen</h3>
+          <p>Das Wahlergebnis wird von der Bank veröffentlicht. Wir berichten hier unter „Aktuelles“ über das Ergebnis der Vertreterwahl.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Unterstützen -->
+  <section id="unterstuetzen">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Wie können Sie uns unterstützen</span>
+        <h2>Gemeinsam sind wir mehr</h2>
+        <p>Die Freie Liste arbeitet ehrenamtlich und unabhängig. Sie können uns auf verschiedenen Wegen helfen:</p>
+      </div>
+      <div class="cards">
+        <article class="card reveal">
+          <div class="icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></div>
+          <h3>Weitersagen</h3>
+          <p>Erzählen Sie anderen Mitgliedern von uns – persönlich, per Messenger oder in der Filiale. Mund-zu-Mund ist die wirkungsvollste Unterstützung.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3>Mitmachen</h3>
+          <p>Bringen Sie sich ein: bei Veranstaltungen, in der Diskussion hier auf der Seite oder als Kandidatin bzw. Kandidat für die nächste Wahl.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <h3>Diskutieren</h3>
+          <p>Nutzen Sie unsere öffentliche Diskussionsrunde, stellen Sie Fragen im FAQ-Bereich oder schreiben Sie uns direkt über das Kontaktformular.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Häufig gestellte Fragen</span>
+        <h2>Fragen – und unsere Antworten</h2>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq">
+          <summary>Was ist die Vertreterversammlung?<span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+          <div class="answer">Die Vertreterversammlung ist das oberste Organ einer Genossenschaftsbank. Die gewählten Vertreterinnen und Vertreter vertreten die Interessen aller Mitglieder, wählen den Aufsichtsrat und kontrollieren den Vorstand.</div>
+        </details>
+        <details class="faq">
+          <summary>Warum sollte es eine zweite Liste geben?<span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+          <div class="answer">Eine zweite, unabhängige Liste schafft echte Wahlalternativen. Mitglieder können zwischen unterschiedlichen Personen und Schwerpunkten wählen – das stärkt die demokratische Legitimation der Vertreterversammlung.</div>
+        </details>
+        <details class="faq">
+          <summary>Wer darf wählen?<span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+          <div class="answer">Wahlberechtigt sind alle Mitglieder der Sparda-Bank München eG, die am Stichtag Mitglied sind und das Wahlrecht nicht verloren haben. Die genauen Voraussetzungen teilt die Bank mit den Wahlunterlagen mit.</div>
+        </details>
+        <details class="faq">
+          <summary>Ist diese Seite offiziell von der Bank?<span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+          <div class="answer">Nein. die-freie-liste.org ist eine private Initiative engagierter Mitglieder – unabhängig von Vorstand und Aufsichtsrat der Bank. Diese Seite erfasst keine Daten und setzt keine Cookies.</div>
+        </details>
+        <details class="faq">
+          <summary>Wie kann ich mitmachen?<span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+          <div class="answer">Schreiben Sie uns über den Kontaktbereich, kommen Sie zu unseren Info-Veranstaltungen oder unterstützen Sie uns, indem Sie die Freie Liste anderen Mitgliedern weiterempfehlen.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt / Impressum -->
+  <section id="kontakt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Kontaktadressen / Impressum</span>
+        <h2>Kontakt &amp; rechtliche Hinweise</h2>
+      </div>
+      <div class="contact-card reveal">
+        <div>
+          <h3>Kontakt</h3>
+          <ul>
+            <li>E-Mail: <span class="placeholder">[E-Mail-Adresse ergänzen]</span></li>
+            <li>Postanschrift: <span class="placeholder">[Adresse ergänzen]</span></li>
+            <li>Erreichbarkeit: <span class="placeholder">[z. B. Mo–Fr, 18–20 Uhr]</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Impressum</h3>
+          <p>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:</p>
+          <p><strong>Die Freie Liste</strong> – Initiative engagierter Kunden der Sparda-Bank München eG<br>
+          <span class="placeholder">[Name, Anschrift des Verantwortlichen ergänzen]</span></p>
+          <p style="margin-top:10px">Diese Webseite ist ein privates Informationsangebot. Es werden keine personenbezogenen Daten erhoben und keine Cookies gesetzt.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <svg width="26" height="18" viewBox="0 0 104 66" aria-hidden="true">
+          <rect x="0" y="0"  width="104" height="13" rx="6.5" fill="#2563eb"/>
+          <rect x="0" y="26" width="104" height="13" rx="6.5" fill="#1e40af"/>
+          <rect x="0" y="52" width="104" height="13" rx="6.5" fill="#f97316"/>
+        </svg>
+        <span>die-freie-liste<span style="color:var(--accent)">.org</span></span>
+      </div>
+      <nav class="footer-nav" aria-label="Fußzeilen-Navigation">
+        <a href="#aktuelles">Aktuelles</a>
+        <a href="#warum">Warum wir?</a>
+        <a href="#programm">Programm</a>
+        <a href="#kandidaten">Kandidaten</a>
+        <a href="#waehlen">Wählen</a>
+        <a href="#unterstuetzen">Unterstützen</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kontakt">Kontakt / Impressum</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> Die Freie Liste – Chancengleichheit und Transparenz</span>
+      <span>Eine Initiative engagierter Kunden zur Vertreterwahl 2026 der Sparda-Bank München eG</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var toggle = document.getElementById('theme-toggle');
+  var metaTheme = document.getElementById('meta-theme-color');
+
+  function applyMeta(theme) {
+    if (metaTheme) metaTheme.setAttribute('content', theme === 'dark' ? '#0a1120' : '#2563eb');
+  }
+  applyMeta(root.getAttribute('data-theme'));
+
+  toggle.addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('dfl-theme', next); } catch (e) {}
+    applyMeta(next);
+  });
+
+  var navToggle = document.getElementById('nav-toggle');
+  var mainNav = document.getElementById('main-nav');
+  navToggle.addEventListener('click', function () {
+    var open = mainNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    navToggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+  });
+  mainNav.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') {
+      mainNav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  var header = document.querySelector('.site-header');
+  function onScroll() {
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revealEls = document.querySelectorAll('.reveal');
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    revealEls.forEach(function (el) { el.classList.add('visible'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  }
+
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.main-nav a'));
+  var sections = navLinks.map(function (a) { return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+  if ('IntersectionObserver' in window && sections.length) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          navLinks.forEach(function (a) {
+            a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+          });
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sections.forEach(function (s) { spy.observe(s); });
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" nonce="DmeaKzYDWw3fvFYfZq8JIw==" data-cf-beacon='{"version":"2024.11.0","token":"36b4216ae2dc4d5488c249161e71fe1e","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

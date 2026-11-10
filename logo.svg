@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 340" role="img" aria-label="die-freie-liste.org – Chancengleichheit und Transparenz">
+  <defs>
+    <linearGradient id="blueOrange" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1e40af"/>
+      <stop offset="1" stop-color="#f97316"/>
+    </linearGradient>
+    <linearGradient id="brandBlue" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1e3a8a"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Logo-Zeichen: drei gleich lange Balken = Chancengleichheit, Liste -->
+  <g transform="translate(72, 108)">
+    <rect x="0" y="0"  width="104" height="13" rx="6.5" fill="url(#brandBlue)"/>
+    <rect x="0" y="26" width="104" height="13" rx="6.5" fill="url(#blueOrange)"/>
+    <rect x="0" y="52" width="104" height="13" rx="6.5" fill="#f97316"/>
+  </g>
+
+  <!-- Wortmarke -->
+  <text x="224" y="140" font-family="'Inter','Segoe UI',system-ui,-apple-system,sans-serif" font-size="64" font-weight="800" fill="#0f172a">
+    die-freie-liste<tspan fill="#f97316">.org</tspan>
+  </text>
+
+  <!-- Claim -->
+  <text x="228" y="192" font-family="'Inter','Segoe UI',system-ui,-apple-system,sans-serif" font-size="22" font-weight="600" letter-spacing="5" fill="#2563eb">
+    CHANCENGLEICHHEIT UND TRANSPARENZ
+  </text>
+
+  <!-- Trennlinie -->
+  <rect x="228" y="216" width="1140" height="1" fill="#cbd5e1"/>
+  <rect x="228" y="215" width="120" height="3" fill="#f97316"/>
+
+  <!-- Untertitel -->
+  <text x="228" y="268" font-family="'Inter','Segoe UI',system-ui,-apple-system,sans-serif" font-size="26" font-weight="600" fill="#1e293b">
+    Eine Initiative engagierter Kunden zur <tspan fill="#f97316" font-weight="700">Vertreterwahl 2026</tspan> der Sparda-Bank München.
+  </text>
+</svg>
